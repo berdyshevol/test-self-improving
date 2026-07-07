@@ -1,0 +1,15 @@
+# Best Practices
+
+Recommended, repeatable ways of working in this repository. Maintained by the Learning Agent.
+
+> Format:
+> - **<practice>** — rationale. _source: ..._
+
+## Starting practices
+
+- **Read `memory/` before starting a task** so past lessons are applied, not re-learned.
+- **Follow existing code conventions** over personal preference.
+- **State when a verification step (lint/typecheck/tests) is unavailable** instead of implying it passed.
+- **Keep changes small and focused** on the task at hand.
+
+_Add task-derived best practices below._
