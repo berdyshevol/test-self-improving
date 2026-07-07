@@ -11,3 +11,27 @@ The goal is to verify that this recursive self-improvement (RSI) loop works end-
 inside a real repository — not to build a production application. See
 [`docs/self_improvement_system.md`](docs/self_improvement_system.md) for how the system is
 structured and how to use the `/task`, `/learn`, and `/evolve` commands.
+
+## Repository structure
+
+| Path | Contents |
+|------|----------|
+| `.claude/commands/` | The `/task`, `/learn`, and `/evolve` slash commands |
+| `.claude/agents/` | The Task, Learning, and Evolution agent prompts |
+| `memory/` | Durable knowledge: lessons, best practices, patterns, and more |
+| `reports/` | Task, learning, and evolution reports |
+| `docs/` | System documentation |
+
+## Usage
+
+Run the loop with the three commands:
+
+```
+/task <task>
+/learn
+...
+/evolve        # after 10–20 tasks
+```
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the rules on using each command, and
+[`docs/self_improvement_system.md`](docs/self_improvement_system.md) for the full design.
