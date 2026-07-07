@@ -16,4 +16,6 @@ Recommended, repeatable ways of working in this repository. Maintained by the Le
 
 - **Link to the canonical doc instead of duplicating its content** — when new documentation
   would repeat information that already lives elsewhere (e.g. `docs/`), reference it rather
-  than copying, to avoid the two copies drifting apart. _source: reports/task_reports/2026-07-07-readme-project-purpose.md_
+  than copying, to avoid the two copies drifting apart. Applied to both `README.md` and
+  `CONTRIBUTING.md`. _sources: reports/task_reports/2026-07-07-readme-project-purpose.md,
+  reports/task_reports/2026-07-07-contributing-guide.md_
