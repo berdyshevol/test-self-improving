@@ -1,0 +1,14 @@
+{
+  "task": "readme-rsi-smoke-test",
+  "date": "2026-07-07",
+  "report": "reports/task_reports/2026-07-07-readme-rsi-smoke-test.md",
+  "status": "completed",
+  "method": "ci",
+  "verification": {
+    "lint": "not_applicable",
+    "typecheck": "not_applicable",
+    "test": "not_applicable",
+    "markdown": "pass"
+  },
+  "notes": "verify-rsi.js --markdown: pass. Full checker: 15 passed, 0 failed with this report included."
+}

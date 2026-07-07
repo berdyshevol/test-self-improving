@@ -35,3 +35,14 @@ Run the loop with the three commands:
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the rules on using each command, and
 [`docs/self_improvement_system.md`](docs/self_improvement_system.md) for the full design.
+
+## RSI Smoke Test
+
+This repository tests a **mechanically verifiable self-improving workflow**: Claude runs
+tasks, records lessons into durable memory, and periodically proposes improvements to its own
+process — but every guarantee that would otherwise be just words in a file is enforced by
+code. `scripts/verify-rsi.js` (run in CI via `.github/workflows/rsi-check.yml`) checks that
+each task report is backed by an outcome file, that the agents respect their boundaries, that
+evolution changes stay gated behind approval, that lessons carry unique IDs, and that internal
+links resolve. If any invariant is violated the check fails, so "self-improving" here means
+*provably* so, not merely *claimed*.
