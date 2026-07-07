@@ -36,6 +36,13 @@ Run this **periodically** (roughly every 10–20 tasks), not after every task.
    - Create `reports/evolution_reports/YYYY-MM-DD-evolution.md`.
    - List findings, supporting evidence, and prioritized recommendations.
 
+## Verify
+
+- Run `node scripts/verify-rsi.js` before and after the pass — it must pass.
+- Anything applied under "Applied now" in the evolution report that touches `.claude/` or
+  `memory/workflow.md` requires an explicit `APPROVED` marker in the report, or the checker
+  fails. Keep such changes in "Awaiting approval" until the user approves them.
+
 ## Safety
 
 - **Do not make risky changes automatically.** Clearly mark non-trivial changes as

@@ -1,0 +1,14 @@
+{
+  "task": "refactor-api-routes",
+  "date": "2026-07-07",
+  "report": "reports/task_reports/2026-07-07-refactor-api-routes.md",
+  "status": "blocked",
+  "method": "manual",
+  "verification": {
+    "lint": "not_applicable",
+    "typecheck": "not_applicable",
+    "test": "not_applicable",
+    "markdown": "not_applicable"
+  },
+  "notes": "Backfilled. Task blocked: no API code existed to refactor. Nothing to verify."
+}

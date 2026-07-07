@@ -82,6 +82,45 @@ and writes recommendations to `reports/evolution_reports/YYYY-MM-DD-evolution.md
 | `/learn` | `reports/learning_reports/` | `lessons`, `best_practices`, `patterns`, `anti_patterns`, `troubleshooting`, `technical_debt`, `automation_opportunities` |
 | `/evolve` | `reports/evolution_reports/` | `agent_ideas`, `automation_opportunities` (+ proposals for `workflow`, agents, docs) |
 
+## Documentation vs. verified improvement
+
+Early versions of this system were **self-documenting**: every task wrote a report and every
+lesson was captured in memory — but every guarantee ("verified", "Task Agent never edits
+memory", "no duplicate lessons") was just **prose in a Markdown file**. Nothing checked that
+the prose was true. A report could claim "tests pass" with no test ever run; an agent could
+edit memory despite being told not to; duplicate lessons could pile up unnoticed.
+
+A **verified** self-improving system makes those guarantees **mechanical** — enforced by code
+that fails loudly when violated:
+
+| Concern | Self-documenting (before) | Verified (now) |
+|---------|---------------------------|----------------|
+| Verification claim | Free-text "Verification" section | Backed by an outcome JSON in `memory/outcomes/`; `verify-rsi.js` fails if a report claims verification with no outcome file |
+| Agent boundaries | "Never edit memory / code" in a prompt | `verify-rsi.js` scans agent files and fails if the instruction is violated |
+| Evolution safety | "Mark changes as proposed" | `verify-rsi.js` fails if an evolution report applies core-file changes without an `APPROVED` marker |
+| Memory hygiene | "Avoid duplicates" (by eye) | `verify-rsi.js` fails on duplicate `[L-NNN]` lesson IDs |
+| Doc integrity | Manual link checking | `verify-rsi.js --markdown` resolves every internal link |
+
+The mechanical layer lives in:
+
+- **`scripts/verify-rsi.js`** — the checker (Node, no dependencies).
+- **`scripts/rsi-outcome-template.json`** — the outcome-signal schema.
+- **`memory/outcomes/`** — one outcome JSON per task (the evidence).
+- **`.github/workflows/rsi-check.yml`** — runs the checker on every push/PR.
+
+### Running verification
+
+```bash
+node scripts/verify-rsi.js              # all invariants + Markdown links
+node scripts/verify-rsi.js --invariants # only the 5 RSI invariant checks
+node scripts/verify-rsi.js --markdown   # only the internal-link check
+```
+
+Exit code is non-zero if anything fails, so CI (and each command) can gate on it.
+
+The distinction matters: **documentation records what someone *said* happened; verification
+proves what *actually* happened.** Only the second can be trusted to compound over time.
+
 ## Safety rules
 
 - Never automatically rewrite core architecture without explicit approval.

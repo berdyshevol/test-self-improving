@@ -32,14 +32,25 @@ $ARGUMENTS
    - Make focused changes that satisfy the task.
    - Follow existing conventions and applicable memory guidance.
 
-5. **Verify**
+5. **Verify (mechanical)**
    - Run lint, typecheck, and tests where they are available.
-   - Fix failures. If a check is unavailable in this repo, say so explicitly.
+   - Run `node scripts/verify-rsi.js` and fix any failures.
+   - Fix failures. If a check is unavailable in this repo, record it as `not_applicable`
+     (do not claim it passed).
 
-6. **Produce the task report**
+6. **Record the outcome signal**
+   - Copy `scripts/rsi-outcome-template.json` to
+     `memory/outcomes/YYYY-MM-DD-task-slug.json`.
+   - Fill in `lint` / `typecheck` / `test` / `markdown` with `pass` / `fail` /
+     `not_applicable`, and set `status` and `method` (`ci` or `manual`).
+   - A task report may **not** claim verification without a matching outcome file.
+
+7. **Produce the task report**
    - Create `reports/task_reports/YYYY-MM-DD-task-slug.md` (date = today; slug = short kebab-case name).
+   - Add an `- Outcome: memory/outcomes/YYYY-MM-DD-task-slug.json` line in the header.
    - Include: **Summary**, **Files changed**, **Decisions**, **Problems**, **Workarounds**,
      **Future improvements**, and **Verification** (what was run and the result).
+   - Re-run `node scripts/verify-rsi.js` — it must pass before the task is done.
 
 ## Scope
 

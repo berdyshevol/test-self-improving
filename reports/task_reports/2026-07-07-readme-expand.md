@@ -2,6 +2,7 @@
 
 - Date: 2026-07-07
 - Status: completed
+- Outcome: memory/outcomes/2026-07-07-readme-expand.json
 
 ## Summary
 The task "Add README" was requested, but a `README.md` already existed (with a Project

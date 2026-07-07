@@ -2,6 +2,7 @@
 
 - Date: 2026-07-07
 - Status: completed
+- Outcome: memory/outcomes/2026-07-07-contributing-guide.json
 
 ## Summary
 Added a `CONTRIBUTING.md` with basic rules for using the `/task`, `/learn`, and `/evolve`

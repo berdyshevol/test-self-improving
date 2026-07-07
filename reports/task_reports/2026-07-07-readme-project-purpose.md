@@ -2,6 +2,7 @@
 
 - Date: 2026-07-07
 - Status: completed
+- Outcome: memory/outcomes/2026-07-07-readme-project-purpose.json
 
 ## Summary
 The task asked for a simple README section called "Project Purpose" explaining that this

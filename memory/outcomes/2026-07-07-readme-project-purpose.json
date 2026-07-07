@@ -1,0 +1,14 @@
+{
+  "task": "readme-project-purpose",
+  "date": "2026-07-07",
+  "report": "reports/task_reports/2026-07-07-readme-project-purpose.md",
+  "status": "completed",
+  "method": "manual",
+  "verification": {
+    "lint": "not_applicable",
+    "typecheck": "not_applicable",
+    "test": "not_applicable",
+    "markdown": "pass"
+  },
+  "notes": "Backfilled. Manually verified valid Markdown and resolving internal link before the mechanical checker existed."
+}
