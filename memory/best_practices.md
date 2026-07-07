@@ -12,6 +12,12 @@ Recommended, repeatable ways of working in this repository. Maintained by the Le
 - **State when a verification step (lint/typecheck/tests) is unavailable** instead of implying it passed.
 - **Keep changes small and focused** on the task at hand.
 
+## Handling ambiguous tasks
+
+- **Check whether a target already exists before creating it** — if a task says "add X" and X
+  is already present, do not overwrite or duplicate. Enhance the existing file and surface the
+  ambiguity to the user instead. _source: reports/task_reports/2026-07-07-readme-expand.md_
+
 ## Documentation
 
 - **Link to the canonical doc instead of duplicating its content** — when new documentation
