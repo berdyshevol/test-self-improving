@@ -35,6 +35,11 @@ Run this after a completed task (typically right after `/task`).
    - Create `reports/learning_reports/YYYY-MM-DD-learning-slug.md`.
    - Summarize what was learned and which memory files were updated.
 
+4b. **Verify**
+   - Give each new lesson in `memory/lessons.md` a unique `[L-NNN]` ID.
+   - Run `node scripts/verify-rsi.js` — it must pass (no duplicate IDs, boundaries intact)
+     before the learning pass is done.
+
 ## Scope
 
 - **Never write production code.** This step only reads reports and updates memory.

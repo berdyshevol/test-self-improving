@@ -2,6 +2,7 @@
 
 - Date: 2026-07-07
 - Status: blocked (not applicable)
+- Outcome: memory/outcomes/2026-07-07-refactor-api-routes.json
 
 ## Summary
 The task asked to "Refactor API routes." An inspection of the repository found **no API

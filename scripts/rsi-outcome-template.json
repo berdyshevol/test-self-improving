@@ -1,0 +1,14 @@
+{
+  "task": "<task-slug>",
+  "date": "<YYYY-MM-DD>",
+  "report": "reports/task_reports/<YYYY-MM-DD-task-slug>.md",
+  "status": "completed",
+  "method": "ci",
+  "verification": {
+    "lint": "not_applicable",
+    "typecheck": "not_applicable",
+    "test": "not_applicable",
+    "markdown": "pass"
+  },
+  "notes": "status: completed|partial|blocked. method: ci|manual. Each verification value: pass|fail|not_applicable."
+}

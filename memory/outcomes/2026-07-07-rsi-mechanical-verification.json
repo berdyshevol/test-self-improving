@@ -1,0 +1,14 @@
+{
+  "task": "rsi-mechanical-verification",
+  "date": "2026-07-07",
+  "report": "reports/task_reports/2026-07-07-rsi-mechanical-verification.md",
+  "status": "completed",
+  "method": "ci",
+  "verification": {
+    "lint": "not_applicable",
+    "typecheck": "not_applicable",
+    "test": "not_applicable",
+    "markdown": "pass"
+  },
+  "notes": "verify-rsi.js: 13 passed, 0 failed. Enforcement confirmed via injected-violation negative test (duplicate ID + broken link both caught)."
+}
